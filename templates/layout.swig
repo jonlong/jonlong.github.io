@@ -12,7 +12,7 @@
         <title>{% block title %}{{blog.title}}{% endblock %}</title>
 
         <link href="{{ BASE_URL }}atom.xml" rel="self" type="application/atom+xml" />
-        <link rel="stylesheet" href="assets/css/screen.css">
+        <link rel="stylesheet" href="/assets/css/screen.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic" />
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     </head>
