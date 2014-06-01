@@ -6,10 +6,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{% block title %}{{blog.title}}{% endblock %}</title>
         <meta name="description" content="{{description}}" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <title>{% block title %}{{blog.title}}{% endblock %}</title>
+
+        <link href="{{ BASE_URL }}atom.xml" rel="self" type="application/atom+xml" />
         <link rel="stylesheet" href="assets/css/screen.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic" />
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
@@ -20,8 +22,8 @@
             <header class="site-header">
                 <div class="container">
                     <div class="site-title-wrapper">
-                        <h1 class="site-title"><a title="{{blog.title}}" href="/">{{blog.title}}</a></h1>
-                        <a class="button-square" href="/rss"><i class="fa fa-rss"></i></a>
+                        <h1 class="site-title"><a title="{{blog.title}}" href="{{ BASE_URL }}">{{blog.title}}</a></h1>
+                        <a class="button-square" href="{{ BASE_URL }}atom.xml"><i class="fa fa-rss"></i></a>
                     </div>
 
                     <ul class="site-nav">
@@ -44,7 +46,7 @@
                     <a class="button-square button-jump-top js-jump-top" href="#"><i class="fa fa-angle-up"></i></a>
                 </div>
 
-                <p class="footer-copyright">&copy; {{ date | date('Y') }} / Jon Long</p>
+                <p class="footer-copyright">&copy; {{ now | date('Y') }} / Jon Long</p>
             </div>
         </footer>
 

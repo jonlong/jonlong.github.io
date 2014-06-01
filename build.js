@@ -28,7 +28,8 @@ m.destination(config.paths.build.base);
 
 m.metadata({
   env: NODE_ENV,
-  BASE_URL: BASE_URL
+  BASE_URL: BASE_URL,
+  now: new Date()
 });
 
 m.use(markdown({
@@ -69,7 +70,7 @@ gulp.task('sass', function() {
 
 m.build(function(err) {
   if (err) {
-    return fn(err);
+    console.dir(err);
   }
 
   gulp.start('sass');
