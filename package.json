@@ -10,9 +10,13 @@
     "metalsmith-markdown": "~0.2.1",
     "metalsmith-permalinks": "~0.3.0",
     "metalsmith": "~0.8.0",
-    "metalsmith-collections": "~0.4.0"
+    "metalsmith-collections": "~0.4.0",
+    "metalsmith-sass": "~0.1.1",
+    "gulp-sass": "~0.7.1",
+    "gulp": "~3.7.0",
+    "express": "~3.4.8"
   },
   "scripts": {
-    "build": "node_modules/.bin/metalsmith"
+    "build": "node build.js"
   }
 }

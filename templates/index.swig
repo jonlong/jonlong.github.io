@@ -3,7 +3,7 @@
 {% block content %}
     <div id="post-index" class="container">
         <ol class="post-list">
-        {{collections | json}}
+        {# {{collections | json}} #}
             {% for post in collections.posts %}
                 <li class="post-stub" >
                     <a title="{{post.title}}" href="{{post.url}}">
