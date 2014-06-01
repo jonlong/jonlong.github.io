@@ -14,7 +14,7 @@ var config = require('./config');
  */
 
 var NODE_ENV = process.env.NODE_ENV || 'development';
-var BASE_URL = process.env.BASE_URL || '//writing.linesandwaves.com';
+var BASE_URL = process.env.BASE_URL || config.blog.baseURL;
 
 /**
  * Metalsmith
