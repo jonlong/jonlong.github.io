@@ -14,7 +14,7 @@ var config = require('./config');
  */
 
 var NODE_ENV = process.env.NODE_ENV || 'development';
-var BASE_URL = process.env.BASE_URL || '/';
+var BASE_URL = process.env.BASE_URL || '//writing.linesandwaves.com';
 
 /**
  * Metalsmith
@@ -22,14 +22,13 @@ var BASE_URL = process.env.BASE_URL || '/';
 
 var m = Metalsmith(__dirname);
 
-m.source(config.paths.src.content);
-
 m.destination(config.paths.build.base);
 
 m.metadata({
   env: NODE_ENV,
   BASE_URL: BASE_URL,
-  now: new Date()
+  now: new Date(),
+  blog: config.blog
 });
 
 m.use(markdown({
