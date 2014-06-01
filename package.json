@@ -17,8 +17,9 @@
     "express": "~3.4.8"
   },
   "scripts": {
-    "build": "node build.js",
-    "start": "node build.js && node index.js"
+    "build": "node ./build",
+    "start": "node ./build && node ./index",
+    "deploy": "node ./build && cd ./build && git init . && git add . && git commit -m 'Deploy'; git push 'git@github.com:jonlong/writing.git' master:gh-pages --force && rm -rf .git"
   },
   "engines": {
     "node": "0.10.x"
