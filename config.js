@@ -1,8 +1,12 @@
 var config = {
+  blog: {
+    title: 'Jon Long'
+  },
   port: 3000,
   paths: {
     src: {
-      content: './content',
+      base: './src',
+      content: './posts',
       assets: './assets',
       templates: './templates',
       sass: './assets/sass'
