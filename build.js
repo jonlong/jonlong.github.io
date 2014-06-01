@@ -4,70 +4,73 @@ var templates = require('metalsmith-templates');
 var collections = require('metalsmith-collections');
 var permalinks = require('metalsmith-permalinks');
 var cleanup = require('metalsmith-cleanup');
+var untemplatize = require('metalsmith-untemplatize');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var config = require('./config');
 
 /**
- * Expose `build`.
+ * Constants
  */
 
-module.exports = build;
+var NODE_ENV = process.env.NODE_ENV || 'development';
+var BASE_URL = process.env.BASE_URL || '/';
 
 /**
- * Build with Metalsmith and Guip.
- *
- * @param {Function} fn(err)
+ * Metalsmith
  */
 
-function build(fn) {
+var m = Metalsmith(__dirname);
 
-  /**
-   * Metalsmith
-   */
+m.source(config.paths.src.content);
 
-  var m = Metalsmith(__dirname);
+m.destination(config.paths.build.base);
 
-  m.source(config.paths.src.content);
+m.metadata({
+  env: NODE_ENV,
+  BASE_URL: BASE_URL
+});
 
-  m.destination(config.paths.build.base);
+m.use(markdown({
+  gfm: true,
+  smartypants: true
+}));
 
-  m.use(markdown());
+m.use(collections({
+  posts: {
+    pattern: 'posts/*'
+  }
+}));
 
-  m.use(collections({
-    posts: {
-      pattern: 'posts/*'
-    }
-  }));
+m.use(permalinks({
+  pattern: ':title'
+}));
 
-  m.use(permalinks({
-    pattern: ':title'
-  }));
+m.use(untemplatize());
 
-  m.use(templates({
-    engine: 'swig',
-    directory: config.paths.src.templates
-  }));
+m.use(templates({
+  engine: 'swig',
+  directory: config.paths.src.templates
+}));
 
-  /**
-   * Gulp
-   */
+/**
+ * Gulp
+ */
 
-  gulp.task('sass', function() {
-    gulp.src(config.paths.src.sass + '/*.scss')
-      .pipe(sass())
-      .pipe(gulp.dest(config.paths.build.css));
-  });
+gulp.task('sass', function() {
+  gulp.src(config.paths.src.sass + '/*.scss')
+    .pipe(sass())
+    .pipe(gulp.dest(config.paths.build.css));
+});
 
-  /**
-   * Build.
-   */
+/**
+ * Build
+ */
 
-  m.build(function(err) {
-    if (err) {
-      return fn(err);
-    }
+m.build(function(err) {
+  if (err) {
+    return fn(err);
+  }
 
-    gulp.start('sass');
-  });
-}
+  gulp.start('sass');
+});
