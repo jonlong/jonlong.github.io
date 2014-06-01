@@ -14,11 +14,12 @@
     "metalsmith-sass": "~0.1.1",
     "gulp-sass": "~0.7.1",
     "gulp": "~3.7.0",
-    "express": "~3.4.8"
+    "express": "~3.4.8",
+    "metalsmith-untemplatize": "~0.1.0"
   },
   "scripts": {
     "build": "node ./build",
-    "start": "node ./build && node ./index",
+    "start": "node ./build && node ./server",
     "deploy": "node ./build && cd ./build && git init . && git add . && git commit -m 'Deploy'; git push 'git@github.com:jonlong/writing.git' master:gh-pages --force && rm -rf .git"
   },
   "engines": {
