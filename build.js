@@ -3,7 +3,6 @@ var markdown = require('metalsmith-markdown');
 var templates = require('metalsmith-templates');
 var collections = require('metalsmith-collections');
 var permalinks = require('metalsmith-permalinks');
-var cleanup = require('metalsmith-cleanup');
 var untemplatize = require('metalsmith-untemplatize');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
