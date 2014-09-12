@@ -4,25 +4,32 @@
   "author": "Jon Long",
   "private": true,
   "dependencies": {
+    "gulp": "^3.8.8",
+    "lodash": "^2.4.1",
+    "metalsmith": "^0.9.0",
+    "metalsmith-collections": "~0.4.0",
     "metalsmith-drafts": "0.0.1",
-    "metalsmith-templates": "~0.5.0",
-    "swig": "~1.3.2",
     "metalsmith-markdown": "~0.2.1",
     "metalsmith-permalinks": "~0.3.0",
-    "metalsmith": "~0.8.0",
-    "metalsmith-collections": "~0.4.0",
     "metalsmith-sass": "~0.1.1",
-    "gulp-sass": "~0.7.1",
-    "gulp": "~3.7.0",
-    "express": "~3.4.8",
-    "metalsmith-untemplatize": "~0.1.0"
-  },
-  "scripts": {
-    "build": "node ./build",
-    "start": "node ./build && node ./server",
-    "deploy": "node ./build && cd ./build && git init . && git add . && git commit -m 'Deploy'; git push 'git@github.com:jonlong/writing.git' master:gh-pages --force && rm -rf .git"
+    "metalsmith-templates": "~0.5.0",
+    "metalsmith-untemplatize": "~0.1.0",
+    "swig": "~1.3.2"
   },
   "engines": {
     "node": "0.10.x"
+  },
+  "devDependencies": {
+    "gulp-awspublish": "0.0.23",
+    "gulp-cloudfront": "0.0.14",
+    "gulp-filter": "^1.0.2",
+    "gulp-gh-pages": "^0.3.4",
+    "gulp-plumber": "^0.6.5",
+    "gulp-sass": "^0.7.3",
+    "gulp-front-matter": "^1.0.0",
+    "gulp-webserver": "^0.8.0",
+    "gulpsmith": "^0.4.3",
+    "run-sequence": "^0.3.6",
+    "tiny-lr": "^0.1.4"
   }
 }

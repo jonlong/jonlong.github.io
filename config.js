@@ -14,7 +14,8 @@ var config = {
     },
     build: {
       base: './build',
-      css: './build/assets/css'
+      css: './build/assets/css',
+      html: './build/**/*.html'
     }
   }
 };

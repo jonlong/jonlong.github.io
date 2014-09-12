@@ -11,45 +11,14 @@
 
         <title>{% block title %}{{blog.title}}{% endblock %}</title>
 
-        <link href="{{ BASE_URL }}atom.xml" rel="self" type="application/atom+xml" />
         <link rel="stylesheet" href="/assets/css/screen.css">
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic" />
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7731452/750242/css/fonts.css" />
     </head>
     <body>
 
-        <div id="wrapper">
-            <header class="site-header">
-                <div class="container">
-                    <div class="site-title-wrapper">
-                        <h1 class="site-title"><a title="{{blog.title}}" href="{{ BASE_URL }}">{{blog.title}}</a></h1>
-                        <a class="button-square" href="{{ BASE_URL }}atom.xml"><i class="fa fa-rss"></i></a>
-                    </div>
-
-                    <ul class="site-nav">
-                        <li class="site-nav-item"><a title="" href="#">Latest Post</a></li>
-                        <li class="site-nav-item"><a title="" href="#">Browse Posts</a></li>
-                        <li class="site-nav-item"><a title="About | {{blog.title}}" href="/about">About</a></li>
-                    </ul>
-                </div>
-            </header>
-
-            <div class="content">
-                {% block content %}{% endblock %}
-            </div>
+        <div class="container">
+            {% block content %}{% endblock %}
         </div>
-
-        <footer class="footer">
-            <div class="container">
-                <div class="site-title-wrapper">
-                    <h1 class="site-title"><a title="{{blog.title}}" href="/">{{blog.title}}</a></h1>
-                    <a class="button-square button-jump-top js-jump-top" href="#"><i class="fa fa-angle-up"></i></a>
-                </div>
-
-                <p class="footer-copyright">&copy; {{ now | date('Y') }} / Jon Long</p>
-            </div>
-        </footer>
-
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
