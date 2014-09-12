@@ -1,11 +1,17 @@
-## Run Server
+## Development
 
-`node index.js`
+`gulp develop`
+
+Creates a server and live-reloading development environment.
 
 ## Build Files
 
-`npm run build`
+`gulp build`
+
+Builds static site and compiles assets.
 
 ## Deploy to GitHub Pages
 
-`npm run deploy`
+`gulp deploy`
+
+Deploys built files to the `master` branch.
