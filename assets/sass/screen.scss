@@ -1,13 +1,182 @@
+/**
+ * ## Notes
+ *
+ * @import statements ending in `.css` are relative to the `build/css` directory
+ */
+
 /*------------------------------------*\
-    #Library Imports
+    #Settings
 \*------------------------------------*/
 
-// Normalize
-@import "assets/components/normalize-css/normalize.css";
+/**
+ * Colors
+ */
+
+$primary: #fff;
+$secondary: #6BA2E1;
+
+/**
+ * Margins
+ */
+
+$gutterSize: 25px;
+
+/**
+ * Fonts
+ */
+
+$headlineFont: 'Open Sans', sans-serif;
+$copyFont: 'PT Serif Caption', serif;
+
+/*------------------------------------*\
+    #Tools
+\*------------------------------------*/
 
 // Bourbon
-@import "assets/components/bourbon/app/assets/stylesheets/_bourbon.scss";
+@import "assets/components/bourbon/app/assets/stylesheets/bourbon";
 
 // Neat
 @import "assets/components/neat/app/assets/stylesheets/neat";
+
+/*------------------------------------*\
+    #Generic
+\*------------------------------------*/
+
+// Normalize
+@import "assets/components/normalize-scss/normalize";
+
+.hidden {
+    @include hide-text;
+}
+
+/*------------------------------------*\
+    #Base
+\*------------------------------------*/
+
+// Fonts
+@import url(//fonts.googleapis.com/css?family=PT+Serif+Caption|PT+Serif|Open+Sans:400,700);
+
+body {
+    background: $secondary;
+    color: $primary;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    text-transform: uppercase;
+    font-family: $headlineFont;
+}
+
+p, li {
+    font-family: $copyFont;
+}
+
+ul, ol {
+    margin: 0;
+    list-style: none;
+}
+
+/*------------------------------------*\
+    #Objects
+\*------------------------------------*/
+
+.container {
+    @include outer-container;
+}
+
+.icon {
+  display: inline-block;
+  fill: #fff;
+}
+
+.btn {
+    color: $secondary;
+    background: $primary;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+.row {
+    @include row();
+}
+
+
+/*------------------------------------*\
+    #Components
+\*------------------------------------*/
+
+
+.icon--logo {
+    height: 27px;
+    width: 230px;
+}
+
+.page-head {
+    padding: $gutterSize*2 0 $gutterSize;
+    border-bottom: 2px solid $primary;
+    position: relative;
+    text-transform: uppercase;
+    font-family: $headlineFont;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+    .page-head__left-block {
+        position: absolute;
+        bottom: $gutterSize;
+        left: 0;
+    }
+
+    .page-head__right-block {
+        position: absolute;
+        bottom: $gutterSize;
+        right: 0;
+    }
+
+    .page-head__center-block {
+        text-align: center;
+        a {
+            color: $primary;
+            font-family: $headlineFont;
+        }
+    }
+
+        .page-head__nav-item {
+            display: inline-block;
+            margin: 0 $gutterSize/2;
+        }
+
+.jumbotron {
+    padding: $gutterSize*4 0;
+}
+
+    .jumbotron__title {
+        @include span-columns(6);
+        text-transform: none;
+        font-size: 6em;
+        line-height: 1.1;
+    }
+
+    .jumbotron__caption {
+        @include span-columns(6);
+        font-size: 1.4em;
+    }
+
+.service {
+    @include span-columns(3);
+    @include omega(4n);
+}
+    
+    .services__service {
+
+    }
+
+/*------------------------------------*\
+    #Trumps
+\*------------------------------------*/
+
 

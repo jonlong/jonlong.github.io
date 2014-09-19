@@ -12,22 +12,55 @@
         <title>{% block title %}{{blog.title}}{% endblock %}</title>
 
         <link rel="stylesheet" href="/assets/css/screen.css">
-        <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7731452/750242/css/fonts.css" />
+
+        <!--[if lte IE 8]><!-->
+        <script type="text/javascript" src="/assets/js/polyfills/svg4everybody.ie8.min.js"></script>
+        <!--<![endif]-->
+
+        <!--[if gt IE 8]><!-->
+        <script type="text/javascript" src="/assets/js/polyfills/svg4everybody.min.js"></script>
+        <!--<![endif]-->
     </head>
     <body>
 
         <div class="container">
+
+            <header class="page-head">
+
+                <div class="page-head__left-block">
+                    <a href="/">
+                        <svg class="icon icon--logo" role="img" title="Logo: linesandwaves">
+                            <use xlink:href="/assets/images/icons.svg#logo"></use>
+                        </svg>
+                    </a>
+                </div>
+
+                <nav class="page-head__center-block">
+                    <ul>
+                        <li class="page-head__nav-item"><a href="/about">About</a></li>
+                        <li class="page-head__nav-item"><a href="/about">Work</a></li>
+                        <li class="page-head__nav-item"><a href="/about">Writing</a></li>
+                    </ul>
+                </nav>
+
+                <div class="page-head__right-block">
+                    <a class="btn" href="mailto:jon@linesandwaves.com">Get In Touch</a>
+                </div>
+
+            </header>
+
             {% block content %}{% endblock %}
+
         </div>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
+            ga('create','UA-1091211-1');ga('send','pageview');
         </script>
     </body>
 </html>

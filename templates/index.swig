@@ -2,14 +2,59 @@
 
 {% block content %}
 
-<h1>Hi, I'm Jon L.</h1>
+<section class="jumbotron row">
 
-<h2>Thanks for visiting!</h2>
+    <h1 class="jumbotron__title">Get to the finish line.</h1>
 
-<p>This is a personal site, but honestly, you caught me at a weird time. Sorry.</p>
+    <div class="jumbotron__caption">
+        <p>Need some front-end development muscle to close out a big project? Kicking off into brand new territory? Looking for seasoned technical guidance?</p>
+        <p>I'll help you get there.</p>
+    </div>
 
-<p>I'm not quite sure what it should be yet. For now, simple seems right.</p>
+</section>
 
-<p>If you're interested, it used to look like <a href="//v3.linesandwaves.com">this</a>, and <a href="//v2.linesandwaves.com">this</a>, and started (oh god, help me), like <a href="//v1.linesandwaves.com">this</a>.</p>
+<section class="row">
+    <h2 class="hidden">Services</h2>
+    <ul>
+        <li class="service">
+            <svg role="img" class="icon icon-code" title="Icon: HTML Brackets">
+                <use xlink:href="/assets/images/icons.svg#code"></use>
+            </svg>
+            <h3>Hire a Front-End Engineer</h3>
+            <p>Need some front-end muscle to close out a big project?</p>
+        </li>
+        <li class="service">
+            <svg role="img" class="icon icon-team" title="Icon: Team">
+                <use xlink:href="/assets/images/icons.svg#organization"></use>
+            </svg>
+            <h3>Augment Your Team</h3>
+            <p>Need some front-end muscle to close out a big project?</p>
+        </li>
+        <li class="service">
+            <svg role="img" class="icon icon-stethoscope" title="Icon: Stethoscope">
+                <use xlink:href="/assets/images/icons.svg#stethoscope"></use>
+            </svg>
+            <h3>Get an Expert Opinion</h3>
+            <p>Need some front-end muscle to close out a big project?</p>
+        </li>
+        <li class="service">
+            <svg role="img" class="icon icon-sitemap" title="Icon: Site Map">
+                <use xlink:href="/assets/images/icons.svg#sitemap"></use>
+            </svg>
+            <h3>Plan Your Next Project</h3>
+            <p>Need some front-end muscle to close out a big project?</p>
+        </li>
+    </ul>
+</section>
+
+<section class="row">
+    <h2>Let's Work Together</h2>
+    <ol>
+        <li>Send me a quick email describing your project, the scope, and a quick sense for the kind of help you need.</li>
+        <li>We'll have a chat. I'll schedule an in-person or vitual meeting based on your location and availability. We'll use this time to see if we're a good fit for one another.</li>
+        <li>We'll agree on a scope of work, and I'll draw up a price sheet and contract based on those terms. I'll send it your way and we'll work together to lock it in.</li>
+        <li>Let's get down to it! I'll help you get from A to B, and feel confident, informed, and satisfied along the way.</li>
+    </ol>
+</section>
 
 {% endblock %}

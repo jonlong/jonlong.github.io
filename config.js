@@ -10,12 +10,16 @@ var config = {
       content: './posts',
       assets: './assets',
       templates: './templates',
-      sass: './assets/sass'
+      sass: './assets/sass',
+      images: './assets/images',
+      components: './assets/components'
     },
     build: {
       base: './build',
       css: './build/assets/css',
-      html: './build/**/*.html'
+      html: './build/**/*.html',
+      images: './build/assets/images',
+      js: './build/assets/js'
     }
   }
 };

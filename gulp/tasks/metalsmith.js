@@ -16,7 +16,9 @@ var config = require('../../config');
 var NODE_ENV = process.env.NODE_ENV || 'development';
 var BASE_URL = process.env.BASE_URL || config.blog.baseURL;
 
-// Turn off swig caching
+/**
+ * Swig Extensions
+ */
 swig.setDefaults({ cache: false });
 
 gulp.task('metalsmith', function() {
