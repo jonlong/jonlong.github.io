@@ -12,6 +12,7 @@
         <title>{% block title %}{{blog.title}}{% endblock %}</title>
 
         <link rel="stylesheet" href="/assets/css/screen.css">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif+Caption|PT+Serif|Open+Sans:400,700,800" />
 
         <!--[if lte IE 8]><!-->
         <script type="text/javascript" src="/assets/js/polyfills/svg4everybody.ie8.min.js"></script>
@@ -21,7 +22,7 @@
         <script type="text/javascript" src="/assets/js/polyfills/svg4everybody.min.js"></script>
         <!--<![endif]-->
     </head>
-    <body>
+    <body class="{% block bodyclass %}{% endblock %}">
 
         <div class="container">
 

@@ -53,9 +53,6 @@ $copyFont: 'PT Serif Caption', serif;
     #Base
 \*------------------------------------*/
 
-// Fonts
-@import url(//fonts.googleapis.com/css?family=PT+Serif+Caption|PT+Serif|Open+Sans:400,700);
-
 body {
     background: $secondary;
     color: $primary;
@@ -71,12 +68,21 @@ h1,h2,h3,h4,h5,h6 {
     font-family: $headlineFont;
 }
 
+p {
+    margin: 0;
+}
+
+p + p {
+    margin-top: $gutterSize;
+}
+
 p, li {
     font-family: $copyFont;
 }
 
 ul, ol {
     margin: 0;
+    padding: 0;
     list-style: none;
 }
 
@@ -109,11 +115,30 @@ ul, ol {
     #Components
 \*------------------------------------*/
 
-
 .icon--logo {
     height: 27px;
     width: 230px;
 }
+
+.home {}
+
+    .home__section {
+        margin-bottom: $gutterSize * 5;
+    }
+
+    .home__section--readability {
+        @include span-columns(6);
+        @include shift(3);
+        line-height: 1.8;
+    }
+
+    .home__section-header {
+        text-transform: none;
+        font-size: 3em;
+        text-align: center;
+        margin-bottom: $gutterSize * 2;
+        line-height: auto;
+    }
 
 .page-head {
     padding: $gutterSize*2 0 $gutterSize;
@@ -151,7 +176,7 @@ ul, ol {
         }
 
 .jumbotron {
-    padding: $gutterSize*4 0;
+    margin-top: $gutterSize * 4;
 }
 
     .jumbotron__title {
@@ -168,11 +193,51 @@ ul, ol {
 
 .service {
     @include span-columns(3);
-    @include omega(4n);
+    text-align: center;
 }
-    
-    .services__service {
 
+    .service__header {
+        font-size: 1em;
+        margin-bottom: $gutterSize/2;
+    }
+
+    .service__icon {
+        height: 150px;
+        width: 150px;
+        margin-bottom: $gutterSize;
+    }
+
+/**
+ * The Big List has custom styled numbers, created
+ * through CSS generated content and the counter property.
+ */
+
+.big-list {
+    counter-reset: li;
+}
+
+    .big-list__item {
+        margin-bottom: $gutterSize * 2;
+        font-size: 1.2em;
+        position:relative;
+        margin-left: 26px;
+        &:before {
+            content: counter(li);
+            counter-increment: li;
+            position: absolute;
+            top: 13px;
+            left: -100px;
+            width: 80px;
+            height: 80px;
+            font-family: $headlineFont;
+            color: $secondary;
+            background: $primary;
+            font-weight: 800;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 3.5em;
+            line-height: 1.15em;
+        }
     }
 
 /*------------------------------------*\
