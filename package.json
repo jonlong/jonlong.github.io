@@ -23,6 +23,7 @@
   "devDependencies": {
     "gulp-awspublish": "0.0.23",
     "gulp-cloudfront": "0.0.14",
+    "gulp-debug": "^1.0.1",
     "gulp-filter": "^1.0.2",
     "gulp-flatten": "0.0.3",
     "gulp-front-matter": "^1.0.0",
