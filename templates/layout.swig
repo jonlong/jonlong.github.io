@@ -52,6 +52,20 @@
 
             {% block content %}{% endblock %}
 
+            <footer class="page-footer">
+                <div class="table-links">
+                    <p class="page-footer__item page-footer__item--variant">linesandwaves, LLC</p>
+                    <p class="page-footer__item">Washington, DC</p>
+                    <p class="page-footer__item">
+                        <a class="page-footer__link btn btn--negative" href="mailto:jon@linesandwaves.com">jon@linesandwaves.com</a>
+                    </p>
+                    <p class="page-footer__item">
+                        <a class="page-footer__link btn btn--negative" href="twitter.com/linesandwaves">@linesandwaves</a>
+                    </p>
+                </div>
+            </footer>
+
+
         </div>
 
 
