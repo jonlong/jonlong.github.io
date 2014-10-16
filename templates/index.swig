@@ -10,7 +10,7 @@
 
     <div class="jumbotron__caption">
         <p>Need some front-end development muscle to close out a big project? Kicking off into brand new territory? Looking for seasoned technical guidance?</p>
-        <p>I'll help you get there. <a class="btn btn--negative" href="mailto:jon@linesandwaves.com">More About Me</a></p>
+        <p>I'll help you get there. <a class="jumbotron__caption-link btn btn--negative" href="mailto:jon@linesandwaves.com">More About Me</a></p>
     </div>
 
 </section>
