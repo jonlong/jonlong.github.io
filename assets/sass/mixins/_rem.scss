@@ -1,0 +1,51 @@
+/**
+ * Rem Fallback
+ *
+ * Calculates pixel values for browsers that don't support rem units.
+ * Assumes parameters are given in pixels.
+ *
+ * Sample Usage:
+ *
+ * .btn {
+ *     @include rem-fallback(margin, 160, 320, 480, 640);
+ * }
+ *
+ * Sample Output:
+ *
+ * .btn {
+ *     margin: 160px 320px 480px 640px;
+ *     margin: 10rem 20rem 30rem 40rem;
+ * }
+ *
+ */
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@mixin rem-fallback($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  }
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value / 16}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}

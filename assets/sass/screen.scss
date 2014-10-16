@@ -8,35 +8,29 @@
     #Settings
 \*------------------------------------*/
 
-/**
- * Colors
- */
-
-$primary: #fff;
-$secondary: #6BA2E1;
-
-/**
- * Margins
- */
-
-$gutterSize: 25px;
-
-/**
- * Fonts
- */
-
-$headlineFont: 'Open Sans', sans-serif;
-$copyFont: 'PT Serif Caption', serif;
+@import "settings";
 
 /*------------------------------------*\
     #Tools
 \*------------------------------------*/
 
-// Bourbon
-@import "assets/components/bourbon/app/assets/stylesheets/bourbon";
+/**
+ * Libs
+ */
 
-// Neat
+@import "assets/components/bourbon/app/assets/stylesheets/bourbon";
 @import "assets/components/neat/app/assets/stylesheets/neat";
+
+/**
+ * Mixins
+ */
+
+@import "mixins/em";
+@import "mixins/rem";
+@import "mixins/breakpoints";
+@import "mixins/svg-background";
+@import "mixins/type";
+
 
 /*------------------------------------*\
     #Generic
@@ -47,6 +41,11 @@ $copyFont: 'PT Serif Caption', serif;
 
 .hidden {
     @include hide-text;
+}
+
+.table-links {
+    display: table;
+    margin: 0 auto;
 }
 
 /*------------------------------------*\
@@ -64,12 +63,13 @@ a {
 
 h1,h2,h3,h4,h5,h6 {
     margin: 0;
-    text-transform: uppercase;
     font-family: $headlineFont;
 }
 
 p {
     margin: 0;
+    @include rem-fallback(font-size, 15);
+    @include rem-fallback(line-height, 28);
 }
 
 p + p {
@@ -100,16 +100,35 @@ ul, ol {
 }
 
 .btn {
+    @include small-caps;
+    @include rem-fallback(border-radius, 5);
+    @include rem-fallback(padding, 10, 20);
+    @include rem-fallback(border-width, 2);
     color: $secondary;
     background: $primary;
-    border-radius: 8px;
-    padding: 10px 20px;
+    border: none;
+    border-color: $primary;
+    border-style: solid;
+
+    &:hover {
+        color: $primary;
+        background: none;
+    }
 }
+
+    .btn--negative {
+        color: $primary;
+        background: none;
+
+        &:hover {
+            color: $secondary;
+            background: $primary;
+        }
+    }
 
 .row {
     @include row();
 }
-
 
 /*------------------------------------*\
     #Components
@@ -123,6 +142,7 @@ ul, ol {
 .home {}
 
     .home__section {
+        @include outer-container;
         margin-bottom: $gutterSize * 5;
     }
 
@@ -133,8 +153,9 @@ ul, ol {
     }
 
     .home__section-header {
+        @include rem-fallback(font-size, 50);
+        @include rem-fallback(letter-spacing, -.08);
         text-transform: none;
-        font-size: 3em;
         text-align: center;
         margin-bottom: $gutterSize * 2;
         line-height: auto;
@@ -144,10 +165,6 @@ ul, ol {
     padding: $gutterSize*2 0 $gutterSize;
     border-bottom: 2px solid $primary;
     position: relative;
-    text-transform: uppercase;
-    font-family: $headlineFont;
-    font-weight: 700;
-    letter-spacing: .5px;
 }
 
     .page-head__left-block {
@@ -171,9 +188,28 @@ ul, ol {
     }
 
         .page-head__nav-item {
+            @include small-caps;
             display: inline-block;
             margin: 0 $gutterSize/2;
         }
+
+.page-footer {
+    clear: both;
+    margin: 0 auto $gutterSize * 2;
+    padding-top: $gutterSize;
+    border-top: 2px solid $primary;
+}
+
+    .page-footer__item {
+        @include small-caps;
+        @include rem-fallback(font-size, 13);
+        @include rem-fallback(margin, 0, 15);
+        display: inline-block;
+    }
+
+    .page-footer__link {
+        @include rem-fallback(font-size, 13);
+    }
 
 .jumbotron {
     margin-top: $gutterSize * 4;
@@ -181,15 +217,25 @@ ul, ol {
 
     .jumbotron__title {
         @include span-columns(6);
-        text-transform: none;
-        font-size: 6em;
-        line-height: 1.1;
+        @include rem-fallback(font-size, 102);
+        @include rem-fallback(line-height, 110);
+        @include rem-fallback(letter-spacing, -.16);
+        @include rem-fallback(margin-top, -20);
     }
 
     .jumbotron__caption {
         @include span-columns(6);
-        font-size: 1.4em;
+
+        & > p {
+            @include rem-fallback(font-size, 21);
+            @include rem-fallback(letter-spacing, .19);
+            @include rem-fallback(line-height, 33);
+        }
     }
+
+        .jumbotron__caption-link {
+            @include rem-fallback(margin-left, 20);
+        }
 
 .service {
     @include span-columns(3);
@@ -197,8 +243,8 @@ ul, ol {
 }
 
     .service__header {
-        font-size: 1em;
-        margin-bottom: $gutterSize/2;
+        @include small-caps;
+        @include rem-fallback(margin-bottom, 20);
     }
 
     .service__icon {
@@ -239,6 +285,27 @@ ul, ol {
             line-height: 1.15em;
         }
     }
+
+.subtraction-list {
+    @include clearfix;
+    @include shift(1);
+    @include span-columns(10);
+
+}
+    .subtraction-list__item {
+        @include span-columns(4);
+        @include omega(3n);
+        @include rem-fallback(border-bottom-width, 2);
+        @include rem-fallback(margin-bottom, 20);
+        @include small-caps;
+        border-bottom-color: $primary;
+        border-bottom-style: solid;
+    }
+
+        .subtraction-list__link {
+            @include rem-fallback(padding-bottom, 2);
+            color: $primary;
+        }
 
 /*------------------------------------*\
     #Trumps

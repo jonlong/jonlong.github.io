@@ -1,0 +1,9 @@
+@mixin small-caps {
+    @include rem-fallback(font-size, 16);
+    font: {
+        family: $headlineFont;
+        weight: 700;
+    }
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
