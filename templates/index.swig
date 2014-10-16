@@ -26,7 +26,7 @@
                 <use xlink:href="/assets/images/icons.svg#code"></use>
             </svg>
             <h3 class="service__header">Hire a Front-End Engineer</h3>
-            <p>Responsive design, OOCSS, JavaScript, and modern web tools including Bootstrap and Angular.js.</p>
+            <p>Responsive design, OOCSS, modular JavaScript, and modern web tools including Bootstrap and Angular.js.</p>
         </li>
 
         <li class="service">
