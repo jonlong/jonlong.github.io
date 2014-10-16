@@ -2,14 +2,10 @@ var gulp = require('gulp');
 var shell = require('gulp-shell');
 var config = require('../../config');
 
-gulp.task('travis', function() {
+gulp.task('travis', ['build'], function() {
   return gulp.src(config.paths.src.base, {read: false})
     .pipe(
       shell([
-        'rm -rf out || exit 0',
-        'mkdir out',
-        'gulp build',
-        'cd out',
         'git config user.name "Travis-CI"',
         'git config user.email "travis@linesandwaves.com"',
         'git init .',
