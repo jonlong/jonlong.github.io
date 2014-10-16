@@ -6,6 +6,6 @@ gulp.task('server', function(){
   return gulp.src(config.paths.build.base)
     .pipe(server({
       livereload: true,
-      open: true
+      // open: true
     }));
 });
