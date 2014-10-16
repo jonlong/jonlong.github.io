@@ -4,4 +4,7 @@ node_js:
   - "0.10"
 before_script:
   - npm install -g gulp
+branches:
+  only:
+  - source
 script: gulp deploy
