@@ -1,6 +1,5 @@
 language: node_js
 node_js:
-  - "0.11"
   - "0.10"
 before_script:
   - npm install -g gulp
@@ -8,3 +7,7 @@ branches:
   only:
   - source
 script: gulp deploy
+env:
+  global:
+  - GH_REF: github.com/jonlong/jonlong.github.io.git
+  - secure: B7vul3Y+6eP81NxYJ32OqQb7GVcsf1FXNmXD7gceKCxWGixGe5cOAPshKV47CP4RF1wt6aHtu9Ny1gGeEyVS1nvO7io/xdTkMOlYsIYhC11I7RLkfYZ8W0PNZqfDCVyircHe70wUMLkHYSy7fXH036Z6J/k0RoWWe4QEPyEmKMQ=
