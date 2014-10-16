@@ -6,8 +6,6 @@ gulp.task('travis', ['build'], function() {
   return gulp.src(config.paths.src.base, {read: false})
     .pipe(
       shell([
-        'git config user.name "Travis-CI"',
-        'git config user.email "travis@linesandwaves.com"',
         'git init .',
         'git add .',
         'git commit -m "Deploy"',

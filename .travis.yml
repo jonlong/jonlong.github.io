@@ -3,6 +3,8 @@ node_js:
   - "0.10"
 before_script:
   - npm install -g gulp
+  - git config user.name "Travis-CI"
+  - git config user.email "jon@linesandwaves.com"
 branches:
   only:
   - source
