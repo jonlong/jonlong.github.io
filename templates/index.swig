@@ -10,15 +10,15 @@
 
     <div class="jumbotron__caption">
         <p>Need some front-end development muscle to close out a big project? Kicking off into brand new territory? Looking for seasoned technical guidance?</p>
-        <p>I'll help you get there.</p>
+        <p>I'll help you get there. <a class="btn btn--negative" href="mailto:jon@linesandwaves.com">More About Me</a></p>
     </div>
 
 </section>
 
 <section class="home__section row">
-   
+
     <h2 class="hidden">Services</h2>
-   
+
     <ul>
 
         <li class="service">
@@ -26,15 +26,15 @@
                 <use xlink:href="/assets/images/icons.svg#code"></use>
             </svg>
             <h3 class="service__header">Hire a Front-End Engineer</h3>
-            <p>Need some front-end muscle to close out a big project?</p>
+            <p>Responsive design, OOCSS, JavaScript, and modern web tools including Bootstrap and Angular.js.</p>
         </li>
 
         <li class="service">
             <svg role="img" class="icon service__icon" title="Icon: Team">
                 <use xlink:href="/assets/images/icons.svg#organization"></use>
             </svg>
-            <h3 class="service__header">Augment Your Team</h3>
-            <p>Need some front-end muscle to close out a big project?</p>
+            <h3 class="service__header">Build a Team Workflow</h3>
+            <p>I'll help you to identify the processes and conventions that will supercharge your team's performance.</p>
         </li>
 
         <li class="service">
@@ -42,7 +42,7 @@
                 <use xlink:href="/assets/images/icons.svg#stethoscope"></use>
             </svg>
             <h3 class="service__header">Get an Expert Opinion</h3>
-            <p>Need some front-end muscle to close out a big project?</p>
+            <p>From client, to management, to design and development, I've been on every side of the equation.</p>
         </li>
 
         <li class="service">
@@ -50,7 +50,53 @@
                 <use xlink:href="/assets/images/icons.svg#sitemap"></use>
             </svg>
             <h3 class="service__header">Plan Your Next Project</h3>
-            <p>Need some front-end muscle to close out a big project?</p>
+            <p>Translate your business goals into a responsible roadmap and a lean set of technical requirements.</p>
+        </li>
+
+    </ul>
+
+</section>
+
+<section class="home__section">
+
+    <h2 class="home__section-header">Selected Work</h2>
+
+    <ul class="subtraction-list">
+
+        <li class="subtraction-list__item">
+            <a href="#" class="subtraction-list__link">National Geographic</a>
+        </li>
+
+        <li class="subtraction-list__item">
+            <a href="#" class="subtraction-list__link">Miller Coors</a>
+        </li>
+
+        <li class="subtraction-list__item">
+            <a href="#" class="subtraction-list__link">General Electric</a>
+        </li>
+
+        <li class="subtraction-list__item">
+            <a href="#" class="subtraction-list__link">Deloitte</a>
+        </li>
+
+        <li class="subtraction-list__item">
+            <a href="#" class="subtraction-list__link">Sweetgreen</a>
+        </li>
+
+        <li class="subtraction-list__item">
+            <a href="#" class="subtraction-list__link">Grandstand</a>
+        </li>
+
+        <li class="subtraction-list__item">
+            <a href="#" class="subtraction-list__link">Honest Tea</a>
+        </li>
+
+        <li class="subtraction-list__item">
+            <a href="#" class="subtraction-list__link">Alexandra Avakian</a>
+        </li>
+
+        <li class="subtraction-list__item">
+            <a href="#" class="subtraction-list__link">iStrategyLabs</a>
         </li>
 
     </ul>
@@ -60,15 +106,15 @@
 <section class="home__section home__section--readability row">
 
     <h2 class="home__section-header">Let's Work Together</h2>
-   
+
     <ol class="big-list">
-   
-        <li class="big-list__item">Send me a quick email describing your project, the scope, and a quick sense for the kind of help you need.</li>
-   
-        <li class="big-list__item">We'll have a chat. I'll schedule an in-person or vitual meeting based on your location and availability. We'll use this time to see if we're a good fit for one another.</li>
-   
-        <li class="big-list__item">We'll agree on a scope of work, and I'll draw up a price sheet and contract based on those terms. I'll send it your way and we'll work together to lock it in.</li>
-   
+
+        <li class="big-list__item">Send me an email describing your project. I'd love to know the reason it's starting, the project's budget and business goals, and a quick sense for the kind of help you need.</li>
+
+        <li class="big-list__item">Let's chat! I'll schedule an in-person or virtual meeting based on your location and availability. We'll use this time to go over your project and the ways that I can help achieve it's business goals.</li>
+
+        <li class="big-list__item">We'll agree on a scope of work, and I'll draw up a detailed quote and outline an approach based on those terms. I'll send it your way and we'll work together to lock it in.</li>
+
         <li class="big-list__item">Let's get down to it! I'll help you get from A to B, and feel confident, informed, and satisfied along the way.</li>
 
     </ol>
