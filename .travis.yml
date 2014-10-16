@@ -6,7 +6,7 @@ before_script:
 branches:
   only:
   - source
-script: gulp deploy
+script: gulp travis
 env:
   global:
   - GH_REF: github.com/jonlong/jonlong.github.io.git
