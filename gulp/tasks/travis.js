@@ -3,7 +3,7 @@ var shell = require('gulp-shell');
 var config = require('../../config');
 
 gulp.task('travis', ['build'], function() {
-  return gulp.src(config.paths.src.base, {read: false})
+  gulp.src(config.paths.src.base, {read: false})
     .pipe(
       shell([
         'git init .',

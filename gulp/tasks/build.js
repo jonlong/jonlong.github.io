@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
 
-gulp.task('build', function(callback) {
-  runSequence('clean', 'svg', 'sass', ['metalsmith', 'ie'], callback);
+gulp.task('build', ['clean'], function(cb) {
+  runSequence('svg', 'sass', ['metalsmith', 'ie'], cb);
 });
