@@ -1,4 +1,16 @@
 /**
+ * Breakpoints
+ *
+ * Set in ems to enable different layouts at different zoom levels
+ * http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/
+ *
+ */
+
+@import "functions/em";
+
+$screen-xs: em(600);
+
+/**
  * Colors
  */
 
