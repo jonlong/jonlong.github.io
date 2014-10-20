@@ -10,7 +10,10 @@
 
     <div class="jumbotron__caption">
         <p>Need some front-end development muscle to close out a big project? Kicking off into brand new territory? Looking for seasoned technical guidance?</p>
-        <p>I'll help you get there. <a class="jumbotron__caption-link btn btn--negative" href="mailto:jon@linesandwaves.com">More About Me</a></p>
+        <p>I'll help you get there.
+        {# <a class="jumbotron__caption-link btn btn--negative" href="mailto:jon@linesandwaves.com">More About Me</a> #}
+        <a class="jumbotron__caption-link btn btn--negative" href="mailto:jon@linesandwaves.com">Get In Touch</a>
+        </p>
     </div>
 
 </section>
@@ -26,7 +29,7 @@
                 <use xlink:href="/assets/images/icons.svg#code"></use>
             </svg>
             <h3 class="service__header">Hire a Front-End Engineer</h3>
-            <p>Responsive design, OOCSS, modular JavaScript, and modern web tools including Bootstrap and Angular.js.</p>
+            <p class="service__blurb">Responsive design, OOCSS, modular JavaScript, and modern web tools including Bootstrap and Angular.js.</p>
         </li>
 
         <li class="service">
@@ -34,7 +37,7 @@
                 <use xlink:href="/assets/images/icons.svg#organization"></use>
             </svg>
             <h3 class="service__header">Build a Team Workflow</h3>
-            <p>I'll help you to identify the processes and conventions that will supercharge your team's performance.</p>
+            <p class="service__blurb">I'll help you to identify the processes and conventions that will supercharge your team's performance.</p>
         </li>
 
         <li class="service">
@@ -42,7 +45,7 @@
                 <use xlink:href="/assets/images/icons.svg#stethoscope"></use>
             </svg>
             <h3 class="service__header">Get an Expert Opinion</h3>
-            <p>From client, to management, to design and development, I've been on every side of the equation.</p>
+            <p class="service__blurb">From client, to management, to design and development, I've been on every side of the equation.</p>
         </li>
 
         <li class="service">
@@ -50,13 +53,14 @@
                 <use xlink:href="/assets/images/icons.svg#sitemap"></use>
             </svg>
             <h3 class="service__header">Plan Your Next Project</h3>
-            <p>Translate your business goals into a responsible roadmap and a lean set of technical requirements.</p>
+            <p class="service__blurb">Translate your business goals into a responsible roadmap and a lean set of technical requirements.</p>
         </li>
 
     </ul>
 
 </section>
 
+{#
 <section class="home__section">
 
     <h2 class="home__section-header">Selected Work</h2>
@@ -103,13 +107,15 @@
 
 </section>
 
+#}
+
 <section class="home__section home__section--readability row">
 
     <h2 class="home__section-header">Let's Work Together</h2>
 
     <ol class="big-list">
 
-        <li class="big-list__item">Send me an email describing your project. I'd love to know the reason it's starting, the project's budget and business goals, and a quick sense for the kind of help you need.</li>
+        <li class="big-list__item"><a href="mailto:jon@linesandwaves.com">Send me an email</a> describing your project. I'd love to know the reason it's starting, the project's budget and business goals, and a quick sense for the kind of help you need.</li>
 
         <li class="big-list__item">Let's chat! I'll schedule an in-person or virtual meeting based on your location and availability. We'll use this time to go over your project and the ways that I can help achieve it's business goals.</li>
 
