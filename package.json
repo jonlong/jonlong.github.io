@@ -29,6 +29,7 @@
     "gulp-flatten": "0.0.3",
     "gulp-front-matter": "^1.0.0",
     "gulp-gh-pages": "^0.3.4",
+    "gulp-pixrem": "^0.1.1",
     "gulp-plumber": "^0.6.5",
     "gulp-raster": "^0.1.0",
     "gulp-rename": "^1.2.0",
