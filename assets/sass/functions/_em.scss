@@ -5,9 +5,10 @@
  * If no target is specified, it uses as base font context as the target.
  * If $base-font-context is not already defined, it sets a default.
  */
+@import "functions/strip-unit";
 
-$base-font-context: '16' !default;
+$base-font-context: 16 !default;
 
 @function em($pixels, $context: $base-font-context) {
-  @return #{$pixels/$context}em
+  @return #{strip-unit($pixels)/strip-unit($context)}em
 }

@@ -22,11 +22,16 @@
 @import "assets/components/neat/app/assets/stylesheets/neat";
 
 /**
+ * Functions
+ */
+
+@import "functions/em";
+@import "functions/rem";
+
+/**
  * Mixins
  */
 
-@import "mixins/em";
-@import "mixins/rem";
 @import "mixins/breakpoints";
 @import "mixins/svg-background";
 @import "mixins/type";
@@ -52,13 +57,18 @@
     #Base
 \*------------------------------------*/
 
+::selection {
+  background: #87BAF4;
+}
+
 body {
     background: $secondary;
     color: $primary;
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
+    color: inherit;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -68,12 +78,10 @@ h1,h2,h3,h4,h5,h6 {
 
 p {
     margin: 0;
-    @include rem-fallback(font-size, 15);
-    @include rem-fallback(line-height, 28);
 }
 
 p + p {
-    margin-top: $gutterSize;
+    margin-top: rem($gutterSize);
 }
 
 p, li {
@@ -101,14 +109,16 @@ ul, ol {
 
 .btn {
     @include small-caps;
-    @include rem-fallback(border-radius, 5);
-    @include rem-fallback(padding, 10, 20);
-    @include rem-fallback(border-width, 2);
+    border-radius: rem(5);
+    padding: rem(10) rem(20);
+    border-width: rem(2);
     color: $secondary;
     background: $primary;
     border: none;
     border-color: $primary;
     border-style: solid;
+    text-decoration: none;
+    text-align: center;
 
     &:hover {
         color: $primary;
@@ -128,6 +138,12 @@ ul, ol {
 
 .row {
     @include row();
+    padding: 0 rem($gutterSize);
+    padding: 0 rem($gutterSize);
+
+    @include screen-xs {
+        padding: 0;
+    }
 }
 
 /*------------------------------------*\
@@ -135,48 +151,70 @@ ul, ol {
 \*------------------------------------*/
 
 .icon--logo {
-    height: 27px;
-    width: 230px;
+    height: rem(27);
+    width: rem(230);
 }
 
 .home {}
 
     .home__section {
-        @include outer-container;
-        margin-bottom: $gutterSize * 5;
+        margin-bottom: rem($gutterSize * 4);
+
+        @include screen-xs {
+            @include outer-container;
+            margin-bottom: rem($gutterSize * 5);
+        }
     }
 
     .home__section--readability {
-        @include span-columns(6);
-        @include shift(3);
         line-height: 1.8;
+
+        @include screen-xs {
+            @include span-columns(6);
+            @include shift(3);
+        }
     }
 
     .home__section-header {
-        @include rem-fallback(font-size, 50);
-        @include rem-fallback(letter-spacing, -.08);
+        font-size: rem(50);
+        margin-bottom: rem($gutterSize * 2);
         text-transform: none;
         text-align: center;
-        margin-bottom: $gutterSize * 2;
-        line-height: auto;
+        line-height: rem(55);
+        letter-spacing: rem(-.08);
+
+        @include screen-xs {
+            margin-top: 0;
+        }
     }
 
 .page-head {
-    padding: $gutterSize*2 0 $gutterSize;
-    border-bottom: 2px solid $primary;
-    position: relative;
+    padding: rem($gutterSize) 0 rem($gutterSize);
+    text-align: center;
+    border-bottom: rem(2) solid $primary;
+
+    @include screen-xs {
+        padding-top: rem($gutterSize * 2);
+        text-align: left;
+        position: relative;
+    }
 }
 
     .page-head__left-block {
-        position: absolute;
-        bottom: $gutterSize;
-        left: 0;
+        // position: absolute;
+        // bottom: $gutterSize;
+        // left: 0;
     }
 
     .page-head__right-block {
-        position: absolute;
-        bottom: $gutterSize;
-        right: 0;
+        display: none;
+
+        @include screen-xs {
+            bottom: rem($gutterSize);
+            position: absolute;
+            right: 0;
+            display: block;
+        }
     }
 
     .page-head__center-block {
@@ -184,73 +222,132 @@ ul, ol {
         a {
             color: $primary;
             font-family: $headlineFont;
+            text-decoration: none;
         }
     }
 
         .page-head__nav-item {
             @include small-caps;
+            margin: 0 rem($gutterSize/2);
             display: inline-block;
-            margin: 0 $gutterSize/2;
         }
 
 .page-footer {
+    padding-top: rem($gutterSize);
+    margin: 0 auto rem($gutterSize * 2);
     clear: both;
-    margin: 0 auto $gutterSize * 2;
-    padding-top: $gutterSize;
-    border-top: 2px solid $primary;
+    border-top: rem(2) solid $primary;
+    text-align: center;
+
+    @include screen-xs {
+        text-align: left;
+    }
 }
 
     .page-footer__item {
         @include small-caps;
-        @include rem-fallback(font-size, 13);
-        @include rem-fallback(margin, 0, 15);
-        display: inline-block;
+        font-size: rem(12);
+        margin: rem($gutterSize/2) rem(15);
+
+        @include screen-xs {
+            font-size: rem(13);
+            display: inline-block;
+            margin: 0 rem(15);
+        }
     }
 
     .page-footer__link {
-        @include rem-fallback(font-size, 13);
+        font-size: rem(13);
+        display: block;
+
+        @include screen-xs {
+            display: inline-block;
+        }
     }
 
 .jumbotron {
-    margin-top: $gutterSize * 4;
+    margin-top: rem($gutterSize * .75);
+
+    &:before {
+        display: none;
+    }
+
+    @include screen-xs {
+        margin-top: rem($gutterSize * 4);
+    }
 }
 
     .jumbotron__title {
-        @include span-columns(6);
-        @include rem-fallback(font-size, 102);
-        @include rem-fallback(line-height, 110);
-        @include rem-fallback(letter-spacing, -.16);
-        @include rem-fallback(margin-top, -20);
+        font-size: rem(90);
+        line-height: rem(90);
+        margin-bottom: rem($gutterSize * 2);
+        text-align: center;
+
+        @include screen-xs {
+            @include span-columns(6);
+            font-size: rem(102);
+            line-height: rem(110);
+            letter-spacing: rem(-.16);
+            margin-top: rem(-20);
+        }
     }
 
     .jumbotron__caption {
-        @include span-columns(6);
+        font-size: rem(21);
+        letter-spacing: rem(.19);
+        line-height: rem(33);
+        text-align: center;
 
-        & > p {
-            @include rem-fallback(font-size, 21);
-            @include rem-fallback(letter-spacing, .19);
-            @include rem-fallback(line-height, 33);
+        @include screen-xs {
+            @include span-columns(6);
+            font-size: rem(21);
+            letter-spacing: rem(.19);
+            line-height: rem(33);
+            text-align: left;
         }
     }
 
         .jumbotron__caption-link {
-            @include rem-fallback(margin-left, 20);
+            margin-top: rem(25);
+            display: block;
+            background: $primary;
+            color: $secondary;
+
+            @include screen-xs {
+                margin: 0 0 0 rem(20);
+                background: none;
+                color: $primary;
+                display: none;
+            }
+
         }
 
 .service {
-    @include span-columns(3);
     text-align: center;
+    margin-top: rem($gutterSize * 2);
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    @include screen-xs {
+        @include span-columns(3);
+        margin-top: 0;
+    }
 }
+    .service__blurb {
+        line-height: rem(25)
+    }
 
     .service__header {
         @include small-caps;
-        @include rem-fallback(margin-bottom, 20);
+        margin-bottom: rem(20);
     }
 
     .service__icon {
-        height: 150px;
-        width: 150px;
-        margin-bottom: $gutterSize;
+        height: rem(150);
+        width: rem(150);
+        margin-bottom: rem($gutterSize);
     }
 
 /**
@@ -263,26 +360,36 @@ ul, ol {
 }
 
     .big-list__item {
-        margin-bottom: $gutterSize * 2;
-        font-size: 1.2em;
+        margin-bottom: rem($gutterSize * 2);
+        font-size: rem(19);
         position:relative;
-        margin-left: 26px;
+
         &:before {
+            display: block;
+            margin: 0 auto rem($gutterSize);
             content: counter(li);
             counter-increment: li;
-            position: absolute;
-            top: 13px;
-            left: -100px;
-            width: 80px;
-            height: 80px;
+            width: rem(80);
+            height: rem(80);
             font-family: $headlineFont;
             color: $secondary;
             background: $primary;
             font-weight: 800;
             text-align: center;
             border-radius: 50%;
-            font-size: 3.5em;
-            line-height: 1.15em;
+            font-size: rem(56);
+            line-height: rem(70);
+
+            @include screen-xs {
+                margin-bottom: 0;
+                position: absolute;
+                top: rem(13);
+                left: rem(-100);
+            }
+        }
+
+        @include screen-xs {
+            margin-left: rem($gutterSize);
         }
     }
 
@@ -295,15 +402,15 @@ ul, ol {
     .subtraction-list__item {
         @include span-columns(4);
         @include omega(3n);
-        @include rem-fallback(border-bottom-width, 2);
-        @include rem-fallback(margin-bottom, 20);
         @include small-caps;
+        border-bottom-width: rem(2);
+        margin-bottom: rem(20);
         border-bottom-color: $primary;
         border-bottom-style: solid;
     }
 
         .subtraction-list__link {
-            @include rem-fallback(padding-bottom, 2);
+            padding-bottom: rem(2);
             color: $primary;
         }
 

@@ -1,5 +1,5 @@
 @mixin small-caps {
-    @include rem-fallback(font-size, 16);
+    font-size: rem(16);
     font: {
         family: $headlineFont;
         weight: 700;
