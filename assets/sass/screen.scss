@@ -273,7 +273,7 @@ ul, ol {
     }
 
     @include screen-xs {
-        margin-top: rem($gutterSize * 4);
+        margin: rem($gutterSize * 3) 0;
     }
 }
 
