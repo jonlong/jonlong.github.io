@@ -4,7 +4,7 @@ var config = require('../../config');
 var path = require('path');
 
 /*
-  Polyfills for IE
+  Polyfills
 
   These get moved from Bower's default directory to a polyfills
   directory in the build dir.
@@ -12,10 +12,11 @@ var path = require('path');
 
 var files = [
   '/svg4everybody/svg4everybody.ie8.min.js',
-  '/svg4everybody/svg4everybody.min.js'
+  '/svg4everybody/svg4everybody.min.js',
+  '/picturefill/dist/picturefill.min.js'
 ];
 
-gulp.task('ie', function(callback) {
+gulp.task('polyfills', function(callback) {
   return gulp.src(files, {root: config.paths.src.components})
     .pipe(flatten())
     .pipe(gulp.dest(config.paths.build.js + '/polyfills'));

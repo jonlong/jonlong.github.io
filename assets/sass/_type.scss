@@ -1,4 +1,4 @@
-@mixin small-caps {
+%small-caps {
     font-size: rem(16);
     font: {
         family: $headlineFont;

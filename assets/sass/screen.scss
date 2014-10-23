@@ -18,8 +18,8 @@
  * Libs
  */
 
-@import "assets/components/bourbon/app/assets/stylesheets/bourbon";
-@import "assets/components/neat/app/assets/stylesheets/neat";
+@import "bourbon/app/assets/stylesheets/bourbon";
+@import "neat/app/assets/stylesheets/neat";
 
 /**
  * Functions
@@ -34,7 +34,6 @@
 
 @import "mixins/breakpoints";
 @import "mixins/svg-background";
-@import "mixins/type";
 
 
 /*------------------------------------*\
@@ -42,7 +41,7 @@
 \*------------------------------------*/
 
 // Normalize
-@import "assets/components/normalize-scss/normalize";
+@import "normalize-scss/normalize";
 
 .hidden {
     @include hide-text;
@@ -98,7 +97,10 @@ ul, ol {
     #Objects
 \*------------------------------------*/
 
-.container {
+@import "type";
+
+.container,
+%container {
     @include outer-container;
 }
 
@@ -108,13 +110,12 @@ ul, ol {
 }
 
 .btn {
-    @include small-caps;
+    @extend %small-caps;
     border-radius: rem(5);
     padding: rem(10) rem(20);
     border-width: rem(2);
     color: $secondary;
     background: $primary;
-    border: none;
     border-color: $primary;
     border-style: solid;
     text-decoration: none;
@@ -125,6 +126,18 @@ ul, ol {
         background: none;
     }
 }
+
+    .btn--inverse,
+    %btn--inverse {
+        color: $primary;
+        background: $secondary;
+
+        &:hover {
+            border-color: $secondary;
+            color: $secondary;
+            background: none;
+        }
+    }
 
     .btn--negative {
         color: $primary;
@@ -158,6 +171,7 @@ ul, ol {
 .home {}
 
     .home__section {
+        @extend %container;
         margin-bottom: rem($gutterSize * 4);
 
         @include screen-xs {
@@ -170,8 +184,9 @@ ul, ol {
         line-height: 1.8;
 
         @include screen-xs {
-            @include span-columns(6);
-            @include shift(3);
+            width: 40%;
+            margin-right: auto;
+            margin-left: auto;
         }
     }
 
@@ -188,7 +203,85 @@ ul, ol {
         }
     }
 
+.project {
+    background: $primary;
+
+    .page-head {
+        @extend %page-head--inverse;
+    }
+
+    .page-footer {
+        background: $secondary;
+        border: rem($gutterSize) solid $primary;
+        border-top: 0;
+    }
+}
+
+    .project__content {
+        border: rem($gutterSize) solid $primary;
+        border-top: 0;
+        border-bottom: 0;
+        background: $secondary;
+        padding: rem($gutterSize * 2);
+        font-size: rem(20);
+        line-height: rem(36);
+    }
+
+        .project__section-header {
+            color: $secondary;
+            text-align: center;
+            margin: rem($gutterSize*2) 0 rem($gutterSize*2);
+        }
+
+            .project__header {
+                font-size: rem(102);
+                margin-bottom: rem($gutterSize/2);
+            }
+
+            .project__role {
+                @extend %small-caps;
+                display: inline-block;
+
+                &:before {
+                    content: "/ ";
+                    font-weight: 500;
+                }
+
+                &:first-child:before {
+                    display: none;
+                }
+            }
+
+        .project__content-container {
+            @include span-columns(8);
+            @include shift(2);
+
+        }
+
+        .project__link {
+            text-align: center;
+            margin-bottom: rem($gutterSize * 2);
+        }
+
+        .project__lead {
+            font: {
+                family: $headlineFont;
+                size: rem(38);
+                weight: 700;
+            }
+            line-height: rem(48);
+        }
+
+        .project__media-caption {
+            font: {
+                family: $copyFont;
+                style: italic;
+                size: rem(16);
+            }
+        }
+
 .page-head {
+    @extend %container;
     padding: rem($gutterSize) 0 rem($gutterSize);
     text-align: center;
     border-bottom: rem(2) solid $primary;
@@ -197,6 +290,25 @@ ul, ol {
         padding-top: rem($gutterSize * 2);
         text-align: left;
         position: relative;
+    }
+}
+
+.page-head--inverse,
+%page-head--inverse {
+    border-bottom-color: $secondary;
+
+    .page-head__logo {
+        fill: $secondary;
+    }
+
+    .page-head__center-block {
+        a {
+            color: $secondary;
+        }
+    }
+
+    .btn {
+        @extend %btn--inverse;
     }
 }
 
@@ -227,14 +339,14 @@ ul, ol {
     }
 
         .page-head__nav-item {
-            @include small-caps;
+            @extend %small-caps;
             margin: 0 rem($gutterSize/2);
             display: inline-block;
         }
 
 .page-footer {
-    padding-top: rem($gutterSize);
-    margin: 0 auto rem($gutterSize * 2);
+    padding: rem($gutterSize) 0;
+    margin: 0 auto;
     clear: both;
     border-top: rem(2) solid $primary;
     text-align: center;
@@ -245,7 +357,7 @@ ul, ol {
 }
 
     .page-footer__item {
-        @include small-caps;
+        @extend %small-caps;
         font-size: rem(12);
         margin: rem($gutterSize/2) rem(15);
 
@@ -273,7 +385,7 @@ ul, ol {
     }
 
     @include screen-xs {
-        margin: rem($gutterSize * 3) 0;
+        margin: rem($gutterSize * 3) auto;
     }
 }
 
@@ -341,7 +453,7 @@ ul, ol {
     }
 
     .service__header {
-        @include small-caps;
+        @extend %small-caps;
         margin-bottom: rem(20);
     }
 
@@ -372,13 +484,15 @@ ul, ol {
             counter-increment: li;
             width: rem(80);
             height: rem(80);
-            font-family: $headlineFont;
+            font: {
+                family: $headlineFont;
+                weight: 800;
+                size: rem(56);
+            }
             color: $secondary;
             background: $primary;
-            font-weight: 800;
             text-align: center;
             border-radius: 50%;
-            font-size: rem(56);
             line-height: rem(70);
 
             @include screen-xs {
@@ -403,7 +517,7 @@ ul, ol {
     .subtraction-list__item {
         @include span-columns(4);
         @include omega(3n);
-        @include small-caps;
+        @extend %small-caps;
         border-bottom-width: rem(2);
         margin-bottom: rem(20);
         border-bottom-color: $primary;

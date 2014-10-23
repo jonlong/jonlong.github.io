@@ -12,7 +12,10 @@ var config = {
       templates: './templates',
       sass: './assets/sass',
       images: './assets/images',
-      components: './assets/components'
+      components: './assets/components',
+      sassIncludePaths: [
+        './assets/components'
+      ]
     },
     build: {
       base: './build',

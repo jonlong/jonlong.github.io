@@ -18,7 +18,8 @@
     "bourbon": "3.2.1",
     "neat": "1.5.1",
     "svg4everybody": "*",
-    "normalize-scss": "~3.0.1"
+    "normalize-scss": "~3.0.1",
+    "picturefill": "~2.1.0"
   },
   "devDependencies": {
     "bourbon": "3.1.8",

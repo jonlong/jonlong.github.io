@@ -24,50 +24,48 @@
     </head>
     <body class="{% block bodyclass %}{% endblock %}">
 
-        <div class="container">
+        <header class="page-head">
 
-            <header class="page-head">
+            <div class="page-head__left-block">
+                <a href="/">
+                    <svg class="page-head__logo icon icon--logo" role="img" title="Logo: linesandwaves">
+                        <use xlink:href="/assets/images/icons.svg#logo"></use>
+                    </svg>
+                </a>
+            </div>
 
-                <div class="page-head__left-block">
-                    <a href="/">
-                        <svg class="icon icon--logo" role="img" title="Logo: linesandwaves">
-                            <use xlink:href="/assets/images/icons.svg#logo"></use>
-                        </svg>
-                    </a>
-                </div>
+            {#
+            <nav class="page-head__center-block">
+                <ul>
+                    <li class="page-head__nav-item"><a href="/about">About</a></li>
+                    <li class="page-head__nav-item"><a href="/about">Work</a></li>
+                    <li class="page-head__nav-item"><a href="/about">Writing</a></li>
+                </ul>
+            </nav>
+            #}
 
-                {#
-                <nav class="page-head__center-block">
-                    <ul>
-                        <li class="page-head__nav-item"><a href="/about">About</a></li>
-                        <li class="page-head__nav-item"><a href="/about">Work</a></li>
-                        <li class="page-head__nav-item"><a href="/about">Writing</a></li>
-                    </ul>
-                </nav>
-                #}
+            <div class="page-head__right-block">
+                <a class="btn" href="mailto:jon@linesandwaves.com">Get In Touch</a>
+            </div>
 
-                <div class="page-head__right-block">
-                    <a class="btn" href="mailto:jon@linesandwaves.com">Get In Touch</a>
-                </div>
+        </header>
 
-            </header>
+        {% block content %}{% endblock %}
 
-            {% block content %}{% endblock %}
+        <footer class="page-footer">
+            <div class="table-links">
+                <p class="page-footer__item page-footer__item--variant">linesandwaves, LLC</p>
+                <p class="page-footer__item">Washington, DC</p>
+                <p class="page-footer__item">
+                    <a class="page-footer__link btn btn--negative" href="mailto:jon@linesandwaves.com">jon@linesandwaves.com</a>
+                </p>
+                <p class="page-footer__item">
+                    <a class="page-footer__link btn btn--negative" href="https://twitter.com/linesandwaves">@linesandwaves</a>
+                </p>
+            </div>
+        </footer>
 
-            <footer class="page-footer">
-                <div class="table-links">
-                    <p class="page-footer__item page-footer__item--variant">linesandwaves, LLC</p>
-                    <p class="page-footer__item">Washington, DC</p>
-                    <p class="page-footer__item">
-                        <a class="page-footer__link btn btn--negative" href="mailto:jon@linesandwaves.com">jon@linesandwaves.com</a>
-                    </p>
-                    <p class="page-footer__item">
-                        <a class="page-footer__link btn btn--negative" href="https://twitter.com/linesandwaves">@linesandwaves</a>
-                    </p>
-                </div>
-            </footer>
-
-        </div>
+        {% block scripts %}{% endblock %}
 
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
