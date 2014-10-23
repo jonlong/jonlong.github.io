@@ -7,11 +7,17 @@
 <section class="project__section-header">
 
     <header>
-        <h1 class="project__header">National Geographic</h1>
-        <ul class="project__roles">
-            <li class="project__role">Front End Development</li>
-            <li class="project__role">Django Admin Design</li>
-        </ul>
+        <h1 class="project__header">{{title}}</h1>
+            {% if roles %}
+            <ul class="project__roles">
+
+                {% for role in roles %}
+                <li class="project__role">{{role}}</li>
+                {% endfor %}
+
+            </ul>
+            {% endif %}
+
     </header>
 
 </section>
@@ -20,14 +26,19 @@
 
     <div class="project__content-container">
 
+        {% if url %}
         <div class="project__link">
-            <a class="btn">Visit Site</a>
+            <a class="btn" href="{{url}}">Visit Site</a>
         </div>
+        {% endif %}
 
-        <p class="project__lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat nisl dui, quis accumsan mauris efficitur at. Suspendisse lacinia, leo vulputate sodales fringilla, purus odio mollis enim, sit amet mollis magna leo quis sem.</p>
+        <p class="project__lead">{{lead}}</p>
 
+
+        {% if screens %}
         <div class="project__screen-collection">
 
+            {% for screen in screens %}
             <picture>
                 <!--[if IE 9]><video style="display: none;"><![endif]-->
                 <source srcset="examples/images/extralarge.jpg" media="(min-width: 1000px)">
@@ -35,39 +46,12 @@
                 <!--[if IE 9]></video><![endif]-->
                 <img srcset="examples/images/medium.jpg" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
             </picture>
-
-            <picture>
-                <!--[if IE 9]><video style="display: none;"><![endif]-->
-                <source srcset="examples/images/extralarge.jpg" media="(min-width: 1000px)">
-                <source srcset="examples/images/large.jpg" media="(min-width: 800px)">
-                <!--[if IE 9]></video><![endif]-->
-                <img srcset="examples/images/medium.jpg" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
-            </picture>
-
-            <picture>
-                <!--[if IE 9]><video style="display: none;"><![endif]-->
-                <source srcset="examples/images/extralarge.jpg" media="(min-width: 1000px)">
-                <source srcset="examples/images/large.jpg" media="(min-width: 800px)">
-                <!--[if IE 9]></video><![endif]-->
-                <img srcset="examples/images/medium.jpg" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
-            </picture>
+            {% endfor %}
 
         </div>
+        {% endif %}
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat nisl dui, quis accumsan mauris efficitur at. Suspendisse lacinia, leo vulputate sodales fringilla, purus odio mollis enim, sit amet mollis magna leo quis sem.</p>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat nisl dui, quis accumsan mauris efficitur at. Suspendisse lacinia, leo vulputate sodales fringilla, purus odio mollis enim, sit amet mollis magna leo quis sem.</p>
-
-        <figure class="project__media">
-            <picture>
-                <!--[if IE 9]><video style="display: none;"><![endif]-->
-                <source srcset="examples/images/extralarge.jpg" media="(min-width: 1000px)">
-                <source srcset="examples/images/large.jpg" media="(min-width: 800px)">
-                <!--[if IE 9]></video><![endif]-->
-                <img srcset="examples/images/medium.jpg" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
-            </picture>
-            <figcaption class="project__media-caption">This is a caption for the photo above</figcaption>
-        </figure>
+        {{contents | safe}}
 
     </div>
 

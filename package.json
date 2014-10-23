@@ -40,6 +40,7 @@
     "gulp-webserver": "^0.8.0",
     "gulpsmith": "^0.4.3",
     "merge-stream": "^0.1.5",
+    "metalsmith-flexible-shortcodes": "^0.4.1",
     "run-sequence": "^0.3.6",
     "tiny-lr": "^0.1.4"
   }

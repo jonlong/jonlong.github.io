@@ -272,13 +272,13 @@ ul, ol {
             line-height: rem(48);
         }
 
-        .project__media-caption {
-            font: {
-                family: $copyFont;
-                style: italic;
-                size: rem(16);
-            }
-        }
+.media__caption {
+    font: {
+        family: $copyFont;
+        style: italic;
+        size: rem(16);
+    }
+}
 
 .page-head {
     @extend %container;
