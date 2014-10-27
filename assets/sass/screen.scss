@@ -153,10 +153,6 @@ ul, ol {
     @include row();
     padding: 0 rem($gutterSize);
     padding: 0 rem($gutterSize);
-
-    @include screen-xs {
-        padding: 0;
-    }
 }
 
 /*------------------------------------*\
@@ -174,7 +170,7 @@ ul, ol {
         @extend %container;
         margin-bottom: rem($gutterSize * 4);
 
-        @include screen-xs {
+        @include screen-sm {
             @include outer-container;
             margin-bottom: rem($gutterSize * 5);
         }
@@ -183,10 +179,14 @@ ul, ol {
     .home__section--readability {
         line-height: 1.8;
 
-        @include screen-xs {
-            width: 40%;
+        @include screen-sm {
+            width: 60%;
             margin-right: auto;
             margin-left: auto;
+        }
+
+        @include screen-md {
+            width: 40%;
         }
     }
 
@@ -198,7 +198,7 @@ ul, ol {
         line-height: rem(55);
         letter-spacing: rem(-.08);
 
-        @include screen-xs {
+        @include screen-sm {
             margin-top: 0;
         }
     }
@@ -286,7 +286,7 @@ ul, ol {
     text-align: center;
     border-bottom: rem(2) solid $primary;
 
-    @include screen-xs {
+    @include screen-sm {
         padding-top: rem($gutterSize * 2);
         text-align: left;
         position: relative;
@@ -321,7 +321,7 @@ ul, ol {
     .page-head__right-block {
         display: none;
 
-        @include screen-xs {
+        @include screen-sm {
             bottom: rem($gutterSize);
             position: absolute;
             right: 0;
@@ -351,7 +351,7 @@ ul, ol {
     border-top: rem(2) solid $primary;
     text-align: center;
 
-    @include screen-xs {
+    @include screen-sm {
         text-align: left;
     }
 }
@@ -361,7 +361,7 @@ ul, ol {
         font-size: rem(12);
         margin: rem($gutterSize/2) rem(15);
 
-        @include screen-xs {
+        @include screen-sm {
             font-size: rem(13);
             display: inline-block;
             margin: 0 rem(15);
@@ -372,7 +372,7 @@ ul, ol {
         font-size: rem(13);
         display: block;
 
-        @include screen-xs {
+        @include screen-sm {
             display: inline-block;
         }
     }
@@ -384,8 +384,9 @@ ul, ol {
         display: none;
     }
 
-    @include screen-xs {
+    @include screen-sm {
         margin: rem($gutterSize * 3) auto;
+        padding: 0;
     }
 }
 
@@ -395,7 +396,7 @@ ul, ol {
         margin-bottom: rem($gutterSize * 2);
         text-align: center;
 
-        @include screen-xs {
+        @include screen-md {
             @include span-columns(6);
             font-size: rem(102);
             line-height: rem(110);
@@ -411,7 +412,7 @@ ul, ol {
         line-height: rem(33);
         text-align: center;
 
-        @include screen-xs {
+        @include screen-md {
             @include span-columns(6);
             font-size: rem(21);
             letter-spacing: rem(.19);
@@ -426,7 +427,7 @@ ul, ol {
             background: $primary;
             color: $secondary;
 
-            @include screen-xs {
+            @include screen-sm {
                 margin: 0 0 0 rem(20);
                 background: none;
                 color: $primary;
@@ -443,7 +444,7 @@ ul, ol {
         margin-top: 0;
     }
 
-    @include screen-xs {
+    @include screen-sm {
         @include span-columns(3);
         margin-top: 0;
     }
@@ -495,7 +496,7 @@ ul, ol {
             border-radius: 50%;
             line-height: rem(70);
 
-            @include screen-xs {
+            @include screen-sm {
                 margin-bottom: 0;
                 position: absolute;
                 top: rem(13);
@@ -503,28 +504,35 @@ ul, ol {
             }
         }
 
-        @include screen-xs {
+        @include screen-sm {
             margin-left: rem($gutterSize);
         }
     }
 
 .subtraction-list {
-    @include clearfix;
-    @include shift(1);
-    @include span-columns(10);
+
+    @include screen-md {
+        @include clearfix;
+        @include shift(1);
+        @include span-columns(10);
+    }
 
 }
     .subtraction-list__item {
-        @include span-columns(4);
-        @include omega(3n);
         @extend %small-caps;
         border-bottom-width: rem(2);
         margin-bottom: rem(20);
         border-bottom-color: $primary;
         border-bottom-style: solid;
+
+        @include screen-md {
+            @include span-columns(4);
+            @include omega(3n);
+        }
     }
 
-        .subtraction-list__link {
+        .subtraction-list__item {
+        // .subtraction-list__link {
             padding-bottom: rem(2);
             color: $primary;
         }

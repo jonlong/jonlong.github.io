@@ -31,8 +31,14 @@
 
 @import "../settings";
 
-@mixin screen-xs {
+@mixin screen-sm {
   @media only screen and (min-width: $screen-xs) {
+    @content;
+  }
+}
+
+@mixin screen-md {
+  @media only screen and (min-width: $screen-sm) {
     @content;
   }
 }

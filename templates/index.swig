@@ -60,54 +60,60 @@
 
 </section>
 
-{#
-<section class="home__section">
+<section class="home__section row">
 
-    <h2 class="home__section-header">Selected Work</h2>
+    <h2 class="home__section-header">Folks I've Worked With</h2>
 
     <ul class="subtraction-list">
 
         <li class="subtraction-list__item">
-            <a href="#" class="subtraction-list__link">National Geographic</a>
+            {# <a href="#" class="subtraction-list__link">National Geographic</a> #}
+            National Geographic
         </li>
 
         <li class="subtraction-list__item">
-            <a href="#" class="subtraction-list__link">Miller Coors</a>
+            {# <a href="#" class="subtraction-list__link">Miller Coors</a> #}
+            Miller Coors
         </li>
 
         <li class="subtraction-list__item">
-            <a href="#" class="subtraction-list__link">General Electric</a>
+            {# <a href="#" class="subtraction-list__link">General Electric</a> #}
+            General Electric
         </li>
 
         <li class="subtraction-list__item">
-            <a href="#" class="subtraction-list__link">Deloitte</a>
+            {# <a href="#" class="subtraction-list__link">Deloitte</a> #}
+            Deloitte
         </li>
 
         <li class="subtraction-list__item">
-            <a href="#" class="subtraction-list__link">Sweetgreen</a>
+            {# <a href="#" class="subtraction-list__link">Sweetgreen</a> #}
+            Sweetgreen
         </li>
 
         <li class="subtraction-list__item">
-            <a href="#" class="subtraction-list__link">Grandstand</a>
+            {# <a href="#" class="subtraction-list__link">Grandstand</a> #}
+            Grandstand
         </li>
 
         <li class="subtraction-list__item">
-            <a href="#" class="subtraction-list__link">Honest Tea</a>
+            {# <a href="#" class="subtraction-list__link">Honest Tea</a> #}
+            Honest Tea
         </li>
 
         <li class="subtraction-list__item">
-            <a href="#" class="subtraction-list__link">Alexandra Avakian</a>
+            {# <a href="#" class="subtraction-list__link">Alexandra Avakian</a> #}
+            Alexandra Avakian
         </li>
 
         <li class="subtraction-list__item">
-            <a href="#" class="subtraction-list__link">iStrategyLabs</a>
+            {# <a href="#" class="subtraction-list__link">iStrategyLabs</a> #}
+            iStrategyLabs
         </li>
 
     </ul>
 
 </section>
-
-#}
 
 <section class="home__section home__section--readability row">
 
@@ -117,7 +123,7 @@
 
         <li class="big-list__item"><a href="mailto:jon@linesandwaves.com">Send me an email</a> describing your project. I'd love to know the reason it's starting, the project's budget and business goals, and a quick sense for the kind of help you need.</li>
 
-        <li class="big-list__item">Let's chat! I'll schedule an in-person or virtual meeting based on your location and availability. We'll use this time to go over your project and the ways that I can help achieve it's business goals.</li>
+        <li class="big-list__item">Let's chat! I'll schedule an in-person or virtual meeting based on your location and availability. We'll use this time to go over your project and the ways that I can help achieve its business goals.</li>
 
         <li class="big-list__item">We'll agree on a scope of work, and I'll draw up a detailed quote and outline an approach based on those terms. I'll send it your way and we'll work together to lock it in.</li>
 
