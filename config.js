@@ -1,7 +1,7 @@
 var config = {
   blog: {
     title: 'Jon Long',
-    baseURL: '//writing.linesandwaves.com/'
+    baseURL: '//linesandwaves.com/'
   },
   port: 3000,
   paths: {
