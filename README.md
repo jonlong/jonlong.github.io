@@ -1,6 +1,6 @@
 ## Development
 
-`gulp develop`
+`gulp`
 
 Creates a server and live-reloading development environment.
 

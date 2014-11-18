@@ -14,13 +14,13 @@ var shortcodes = require('metalsmith-flexible-shortcodes');
 var _ = require('lodash');
 var path = require('path');
 var swig = require('swig');
+var swigExtras = require('swig-extras');
 var config = require('../../config');
 
 var NODE_ENV = process.env.NODE_ENV || 'development';
 var BASE_URL = process.env.BASE_URL || config.blog.baseURL;
 
 var buildResponsiveImageMarkup = function(params) {
-  console.log('up in it')
   return '<picture>\
               <!--[if IE 9]><video style="display: none;"><![endif]-->\
               <source srcset="' + config.paths.build.images + '/' + params.lg + '" media="(min-width: 1000px)">\
@@ -42,7 +42,13 @@ var buildCaptionedImageMarkup = function(params) {
 /**
  * Swig Extensions
  */
+
 swig.setDefaults({ cache: false });
+swigExtras.useFilter(swig, 'markdown');
+
+/**
+ * Metalsmith task
+ */
 
 gulp.task('metalsmith', function() {
   var frontMatterFilter = filter('**/*.{html,md}'); // filter out files with front matter
@@ -75,7 +81,6 @@ gulp.task('metalsmith', function() {
         .use(shortcodes({
           shortcodes: {
               'captioned-image': function(str, params) {
-              console.log('responsive image shortcode')
                 var image = buildCaptionedImageMarkup(params);
                 return image;
             },
