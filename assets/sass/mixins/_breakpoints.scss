@@ -42,3 +42,9 @@
     @content;
   }
 }
+
+@mixin screen-lg {
+  @media only screen and (min-width: $screen-md) {
+    @content;
+  }
+}
