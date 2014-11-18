@@ -3,6 +3,8 @@ var config = {
     title: 'Jon Long',
     baseURL: '//linesandwaves.com/'
   },
+  repo: 'jonlong/jonlong.github.io',
+  deployBranch: 'master',
   port: 3000,
   paths: {
     src: {
