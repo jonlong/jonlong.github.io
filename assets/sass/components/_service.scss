@@ -1,0 +1,41 @@
+/**
+ * Service
+ */
+
+.service {
+    text-align: center;
+    margin-top: em($gutterSize * 2);
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    @include screen-sm {
+        @include span-columns(6);
+        padding: em($gutterSize);
+        margin-top: 0;
+    }
+
+    @media only screen and (min-width: $screen-xs) and (max-width: em(960)) {
+        @include omega(2n);
+    }
+
+    @media only screen and (min-width: em(960)) {
+        @include span-columns(3);
+    }
+}
+
+    .service__blurb {
+        line-height: em(25);
+    }
+
+    .service__header {
+        @extend %small-caps;
+        margin-bottom: em(20);
+    }
+
+    .service__icon {
+        height: em(150);
+        width: em(150);
+        margin-bottom: em($gutterSize);
+    }

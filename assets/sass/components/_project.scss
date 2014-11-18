@@ -1,0 +1,73 @@
+/**
+ * Project
+ */
+
+.project {
+    background: $primary;
+
+    .page-head {
+        @extend %page-head--inverse;
+    }
+
+    .page-footer {
+        background: $secondary;
+        border: rem($gutterSize) solid $primary;
+        border-top: 0;
+    }
+}
+
+    .project__content {
+        border: rem($gutterSize) solid $primary;
+        border-top: 0;
+        border-bottom: 0;
+        background: $secondary;
+        padding: rem($gutterSize * 2);
+        font-size: rem(20);
+        line-height: rem(36);
+    }
+
+        .project__section-header {
+            color: $secondary;
+            text-align: center;
+            margin: rem($gutterSize*2) 0 rem($gutterSize*2);
+        }
+
+            .project__header {
+                font-size: rem(102);
+                margin-bottom: rem($gutterSize/2);
+            }
+
+            .project__role {
+                @extend %small-caps;
+                display: inline-block;
+
+                &:before {
+                    content: "/ ";
+                    font-weight: 500;
+                }
+
+                &:first-child:before {
+                    display: none;
+                }
+            }
+
+        .project__content-container {
+            @include span-columns(8);
+            @include shift(2);
+
+        }
+
+        .project__link {
+            text-align: center;
+            margin-bottom: rem($gutterSize * 2);
+        }
+
+        .project__lead {
+            font: {
+                family: $headlineFont;
+                size: rem(38);
+                weight: 700;
+            }
+            line-height: rem(48);
+        }
+

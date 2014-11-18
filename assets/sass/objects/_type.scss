@@ -1,9 +1,9 @@
 %small-caps {
-    font-size: rem(16);
+    font-size: em(16);
     font: {
         family: $headlineFont;
         weight: 700;
     }
-    letter-spacing: .5px;
+    letter-spacing: em(0.5);
     text-transform: uppercase;
 }

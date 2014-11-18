@@ -1,0 +1,13 @@
+/**
+ * Media
+ */
+
+.media {}
+
+    .media__caption {
+        font: {
+            family: $copyFont;
+            style: italic;
+            size: rem(16);
+        }
+    }

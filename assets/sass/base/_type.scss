@@ -1,0 +1,37 @@
+/**
+ * Type Base
+ */
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    font-family: $headlineFont;
+}
+
+p {
+    margin: 0;
+}
+
+p + p {
+    margin-top: rem($gutterSize);
+}
+
+p, li {
+    font: {
+        family: $copyFont;
+        size: 1em;
+    }
+}
+
+/**
+ * Responsive Type Base
+ *
+ * Based on css-tricks.com/rems-ems/
+ */
+
+html {
+    font-size: 16px;
+
+    @include screen-sm {
+        font-size: 18px;
+    }
+}

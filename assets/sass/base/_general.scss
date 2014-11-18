@@ -1,0 +1,23 @@
+/**
+ * General Base
+ */
+
+::selection {
+  background: #87BAF4;
+}
+
+body {
+    background: $secondary;
+    color: $primary;
+}
+
+a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

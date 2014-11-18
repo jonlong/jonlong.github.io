@@ -1,0 +1,43 @@
+/**
+ * Buttons
+ */
+
+.btn {
+    @extend %small-caps;
+    border-radius: em(5);
+    padding: em(10) em(20);
+    border-width: em(2);
+    color: $secondary;
+    background: $primary;
+    border-color: $primary;
+    border-style: solid;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+        color: $primary;
+        background: none;
+    }
+}
+
+    .btn--inverse,
+    %btn--inverse {
+        color: $primary;
+        background: $secondary;
+
+        &:hover {
+            border-color: $secondary;
+            color: $secondary;
+            background: none;
+        }
+    }
+
+    .btn--negative {
+        color: $primary;
+        background: none;
+
+        &:hover {
+            color: $secondary;
+            background: $primary;
+        }
+    }

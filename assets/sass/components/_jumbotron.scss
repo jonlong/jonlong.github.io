@@ -1,0 +1,91 @@
+/**
+ * Jumbotron
+ */
+
+.jumbotron {
+    margin-top: em($gutterSize);
+
+    &:before {
+        display: none;
+    }
+
+    @include screen-sm {
+        margin: em($gutterSize * 2) auto;
+    }
+
+    @include screen-md {
+        margin: em($gutterSize * 3) auto;
+    }
+}
+
+    .jumbotron__title {
+        font-size: em(95);
+        line-height: 1.1;
+        margin-bottom: em($gutterSize * 1.5, 95);
+        text-align: center;
+
+        @include screen-sm {
+            margin-bottom: em($gutterSize * 2, 95);
+        }
+
+        @include screen-md {
+            @include span-columns(6);
+            // font-size: em(90);
+            margin-top: em(-2);
+            letter-spacing: em(-.16);
+            margin-bottom: 0;
+        }
+
+        @media only screen and (min-width: em(900)) and (max-width: em(950)) {
+            font-size: em(75);
+        }
+
+         @media only screen and (min-width: em(900)) and (max-width: em(1130)) {
+            font-size: em(80);
+        }
+
+        @media only screen and (min-width: em(1130)) and (max-width: em(1190)) {
+            font-size: em(90);
+        }
+
+        @media only screen and (min-width: em(1190)) {
+            font-size: em(95);
+        }
+
+    }
+
+    .jumbotron__caption {
+        font-size: em(21);
+        letter-spacing: em(.19);
+        line-height: em(33);
+        text-align: center;
+
+        @include screen-md {
+            @include span-columns(6);
+            font-size: em(20);
+            letter-spacing: em(.19);
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        @include screen-lg {
+            font-size: em(21);
+            letter-spacing: em(.19);
+            line-height: 1.7;
+        }
+    }
+
+        .jumbotron__caption-link {
+            margin-top: em(25);
+            display: block;
+            background: $primary;
+            color: $secondary;
+
+            @include screen-sm {
+                margin: 0 0 0 em(20);
+                background: none;
+                color: $primary;
+                display: none;
+            }
+
+        }

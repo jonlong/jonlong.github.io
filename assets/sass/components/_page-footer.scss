@@ -1,0 +1,36 @@
+/**
+ * Page Footer
+ */
+
+.page-footer {
+    padding: em($gutterSize) 0;
+    margin: 0 auto;
+    clear: both;
+    border-top: em(2) solid $primary;
+    text-align: center;
+
+    @include screen-md {
+        text-align: left;
+    }
+}
+
+    .page-footer__item {
+        @extend %small-caps;
+        font-size: em(15);
+        margin: em($gutterSize * .75) em(15);
+
+        @include screen-md {
+            font-size: em(13);
+            display: inline-block;
+            margin: 0 em(15);
+        }
+    }
+
+    .page-footer__link {
+        font-size: em(13);
+        display: block;
+
+        @include screen-md {
+            display: inline-block;
+        }
+    }

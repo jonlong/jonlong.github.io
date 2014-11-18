@@ -1,0 +1,67 @@
+/**
+ * Page Head
+ */
+
+.page-head {
+    @extend %container;
+    padding-top: em($gutterSize);
+    padding-bottom: em($gutterSize);
+    text-align: center;
+    border-bottom: em(2) solid $primary;
+
+    @include screen-sm {
+        text-align: left;
+        position: relative;
+    }
+}
+
+.page-head--inverse,
+%page-head--inverse {
+    border-bottom-color: $secondary;
+
+    .page-head__logo {
+        fill: $secondary;
+    }
+
+    .page-head__center-block {
+        a {
+            color: $secondary;
+        }
+    }
+
+    .btn {
+        @extend %btn--inverse;
+    }
+}
+
+    .page-head__left-block {
+        // position: absolute;
+        // bottom: $gutterSize;
+        // left: 0;
+    }
+
+    .page-head__right-block {
+        display: none;
+
+        @include screen-sm {
+            position: absolute;
+            bottom: em($gutterSize);
+            right: em($gutterSize);
+            display: block;
+        }
+    }
+
+    .page-head__center-block {
+        text-align: center;
+        a {
+            color: $primary;
+            font-family: $headlineFont;
+            text-decoration: none;
+        }
+    }
+
+        .page-head__nav-item {
+            @extend %small-caps;
+            margin: 0 em($gutterSize/2);
+            display: inline-block;
+        }

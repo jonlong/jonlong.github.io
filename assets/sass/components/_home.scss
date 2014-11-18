@@ -1,0 +1,42 @@
+/**
+ * Home
+ */
+
+.home {}
+
+    .home__section {
+        @extend %container;
+        margin-bottom: em($gutterSize * 4);
+
+        @include screen-sm {
+            @include outer-container;
+            margin-bottom: em($gutterSize * 5);
+        }
+    }
+
+    .home__section--readability {
+        line-height: 1.8;
+
+        @include screen-sm {
+            width: 60%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @include screen-md {
+            width: 40%;
+        }
+    }
+
+    .home__section-header {
+        font-size: em(50);
+        margin-bottom: em($gutterSize * 2, 50);
+        text-transform: none;
+        text-align: center;
+        line-height: 1.2;
+        letter-spacing: em(-.08);
+
+        @include screen-sm {
+            margin-top: 0;
+        }
+    }

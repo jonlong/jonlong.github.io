@@ -1,0 +1,32 @@
+/**
+ * Subtraction List
+ *
+ * It's got that whole subtraction.com vibe goin
+ */
+
+.subtraction-list {
+
+    @include screen-md {
+        @include clearfix;
+        @include shift(1);
+        @include span-columns(10);
+    }
+}
+
+    .subtraction-list__item {
+        @extend %small-caps;
+        border-bottom-width: em(2);
+        margin-bottom: em(20);
+        border-bottom-color: $primary;
+        border-bottom-style: solid;
+
+        @include screen-md {
+            @include span-columns(4);
+            @include omega(3n);
+        }
+    }
+
+        .subtraction-list__item {
+            padding-bottom: em(2);
+            color: $primary;
+        }

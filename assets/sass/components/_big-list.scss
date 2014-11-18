@@ -1,0 +1,46 @@
+/**
+ * Big List
+ *
+ * Features custom styled numbers, created through CSS generated content and
+ * the counter property.
+ */
+
+.big-list {
+    counter-reset: li;
+}
+
+    .big-list__item {
+        margin-bottom: em($gutterSize * 2);
+        font-size: em(19);
+        position:relative;
+
+        &:before {
+            display: block;
+            margin: 0 auto em($gutterSize, 56);
+            content: counter(li);
+            counter-increment: li;
+            width: em(80, 56);
+            height: em(80, 56);
+            font: {
+                family: $headlineFont;
+                weight: 800;
+                size: em(56, 19);
+            }
+            color: $secondary;
+            background: $primary;
+            text-align: center;
+            border-radius: 50%;
+            line-height: em(70, 56);
+
+            @include screen-sm {
+                margin-bottom: 0;
+                position: absolute;
+                top: em(13, 56);
+                left: em(-100, 56);
+            }
+        }
+
+        @include screen-sm {
+            margin-left: em($gutterSize);
+        }
+    }
